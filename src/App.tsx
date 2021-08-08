@@ -5,8 +5,8 @@ import { Profile } from './pages/Profile';
 function App() {
   return (
     <BrowserRouter>
-      {/* <Route path='/' component={Home}></Route> */}
-      <Route path='/' component={Profile}></Route>
+      <Route path='/' exact component={Home}></Route>
+      <Route path='/profile/' component={Profile}></Route>
     </BrowserRouter>
 
   );

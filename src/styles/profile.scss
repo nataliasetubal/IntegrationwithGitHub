@@ -36,11 +36,13 @@ main > div {
         }
 
         h1 {
+            color: #f2efef;
             font-family: "Ubuntu", sans-serif;
             font-style: normal;
             font-size: 28px;
             line-height: 32px;
             text-align: left;
+            margin-bottom: 0px;
         }
         
     }
@@ -62,15 +64,37 @@ main > div {
 
 section {
     width: 700px;
-    height: 270px;
+    height: 230px;
     border-radius: 8px;
     background: #0d1117;
     margin-top: 36px;
     padding: 0 87px;
 
     .information{
-        width: 500px;
-        height: 270px;
+        width: 400px;
+        height: 230px;
+        display: flex;
         flex-direction: column;
+        justify-content: center;
+        margin: 0 auto;
+    }
+}
+
+footer{
+    margin: 30px auto 10px;
+    text-align: center;
+    font-size: 16px;
+
+    .botaoPerfil{
+        width: 350px;
+        background:#2EA44F;
+        padding: 10px;
+        border-radius: 8px;
+        color: #f2efef;
+
+        a{
+            text-decoration: none;
+            color: #f2efef;
+        }
     }
 }

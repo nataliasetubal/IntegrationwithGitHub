@@ -28,16 +28,22 @@ export function Profile() {
                     </header>
                     <section>
                         <div className='information'>
-                        <p></p>
-                        <p>name: Natália Gomes</p>
-                        <p>location: Ceará, Brasil</p>
-                        <p>bio: www.linkedin.com/in/natalia-setubal</p>
-                        <p>public_repositories: 4</p>
-                        <p>public_gists: 1</p>
-                        <p>created_at: 2020-10-23</p>
-                        <p></p>
+                            <p></p>
+                            <p>name: Natália Gomes</p>
+                            <p>location: Ceará, Brasil</p>
+                            <p>bio: www.linkedin.com/in/natalia-setubal</p>
+                            <p>public_repositories: 4</p>
+                            <p>public_gists: 1</p>
+                            <p>created_at: 2020-10-23</p>
+                            <p></p>
                         </div>
                     </section>
+                    <footer>
+                        <div className='botaoPerfil'>
+                        <p>Veja o perfil no link:</p>
+                        <a href='https://github.com/nataliasetubal'>https://github.com/nataliasetubal</a>
+                        </div>
+                    </footer>
                 </div>
             </main>
         </div>
