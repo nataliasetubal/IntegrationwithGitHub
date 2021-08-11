@@ -5,7 +5,7 @@
 }
 
 body {
-    background: #161b22;
+    background: #f2efef;
     color: #aab3c0;
 }
 
@@ -31,6 +31,8 @@ aside {
     display: flex;
     flex: 5;
     justify-content: center;
+    flex-direction: column;
+    background: #161b22;
 
     div {
         display: flex;
@@ -44,15 +46,18 @@ aside {
 
         h2 {
             font-size: 18px;
+            text-align: center;
+        }
+        h1{
+            font-size: 28px;
             line-height: 25px;
             text-align: center;
-            margin: 18px 30px;
+            margin-top: 38px;
         }
     }
 }
 
 main {
-    background: #f2efef;
     display: flex;
     flex: 8;
     justify-content: center;

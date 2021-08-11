@@ -1,15 +1,13 @@
-import { BrowserRouter, Route } from 'react-router-dom'
-import { Home } from './pages/Home';
-import { Profile } from './pages/Profile';
+import { BrowserRouter } from 'react-router-dom'
+import React from 'react';
+import Routes from './routes';
 
-function App() {
-  return (
+const App: React.FC = () => (
+  <>
     <BrowserRouter>
-      <Route path='/' exact component={Home}></Route>
-      <Route path='/profile/' component={Profile}></Route>
+      <Routes></Routes>
     </BrowserRouter>
-
-  );
-}
+  </>
+)
 
 export default App;

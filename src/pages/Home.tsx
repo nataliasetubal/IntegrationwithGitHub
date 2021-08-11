@@ -1,32 +1,68 @@
-import { FormEvent, useState } from "react"
-import { useHistory } from 'react-router-dom';
+import React, { FormEvent, useState } from "react"
+import api from "../services/api"
+import { Form } from "./Form"
+
 import logoImg from '../assets/logoGitHub.png'
 
 import '../styles/home.scss'
+import { Profile } from "./Profile"
 
-export function Home() {
-    const history = useHistory()
-    const [email, setNewEmail] = useState('')
+interface Usuario {
+    user: {
+        login: string
+        name: string
+        id: number
+        avatar_url: string
+        html_url: string
+        location: string
+        bio: string
+        public_repos: number
+        public_gists: number
+        followers: number
+        following: number
+        created_at: string
+        prevState: undefined
+    }
+}
 
-    async function handleEmail(event: FormEvent) {
+interface UsuarioPesquisado {
+    user: {
+        login: string
+        name: string
+        id: number
+        avatar_url: string
+        html_url: string
+        location: string
+        bio: string
+        public_repos: number
+        public_gists: number
+        followers: number
+        following: number
+        created_at: string
+        prevState: undefined
+    }
+}
+
+const Home: React.FC = () => {
+    const [inputErro, setNewErro] = useState('')
+    const [user, setNewUser] = useState('')
+
+    const [profile, setProfile] = useState<UsuarioPesquisado | undefined>(undefined)
+
+    async function handleSubmit(event: FormEvent<HTMLFormElement>,): Promise<void> {
         event.preventDefault();
-        
-        const user = email.substring(0, email.indexOf("@"));
-        const domain = email.substring(email.indexOf("@") + 1, email.length);
-        if ((user.length >= 1) &&
-            (domain.length >= 3) &&
-            (user.search("@") === -1) &&
-            (domain.search("@") === -1) &&
-            (user.search(" ") === -1) &&
-            (domain.search(" ") === -1) &&
-            (domain.search(".") !== -1) &&
-            (domain.indexOf(".") >= 1) &&
-            (domain.lastIndexOf(".") < domain.length - 1) &&
-            (domain.search('.') <= 2)){
-            console.log("E-mail valido", "<>", user , "<>" , domain);
-            history.push('/profile')
-        } else {
-            console.log('Email inválido')
+        if (!user) {
+            setNewErro('Digite o usuário')
+            return
+        }
+        try {
+            const response = await api.get<Usuario>(`users/${user}`)
+            const profileSearched = response.data
+            setProfile(profileSearched)
+            setNewErro('')
+        }
+        catch (err) {
+            setNewErro('Usuário não encontrado')
         }
     }
 
@@ -36,27 +72,28 @@ export function Home() {
             <aside>
                 <div>
                     <img src={logoImg} alt="Logo do GitHub"></img>
-                    <h2>integration with GitHub</h2>
+                    <h1>Integration with GitHub</h1>
                 </div>
-            </aside>
-            <main>
                 <div>
-                    <h1>Insira seu e-mail do GitHub e veja seu perfil</h1>
-                    <p id='msgemail'></p>
-                    <form onSubmit={handleEmail}>
+                    <h2>Insira seu usuario do GitHub e veja seu perfil</h2>
+                    <p>{inputErro}</p>
+                    <Form hasError={!!inputErro} onSubmit={handleSubmit}>
                         <input
                             type='e-mail'
                             required
+                            value={user}
+                            onChange={event => setNewUser(event.target.value)}
                             maxLength={60}
-                            onChange={event => setNewEmail(event.target.value)}
-                            value={email}
-                            placeholder="<> Insira seu e-mail </>"></input>
+                            placeholder="<> Insira seu usuário </>"></input>
                         <button>
                             Entrar
                         </button>
-                    </form>
+                    </Form>
                 </div>
-            </main>
+            </aside>
+            {profile ? <Profile profile ={profile}/> : null }
         </div>
     )
 }
+
+export { Home }
