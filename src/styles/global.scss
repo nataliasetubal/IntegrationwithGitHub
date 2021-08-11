@@ -25,14 +25,32 @@ textarea {
 
 #home-page {
     display: flex;
+    width: 100vw;
+    @media screen and (max-width: 750px) {
+        flex-wrap: wrap;
+        width: auto;
+        section{
+            padding: 15px;
+            width: 600px;
+        }
+        main{
+            padding: 15px;
+            header {
+                width: 600px;
+            }
+            .containerInformation{
+                width: 600px;
+            }
+        }
+    }
 }
 
-aside {
+section {
     display: flex;
-    flex: 5;
     justify-content: center;
     flex-direction: column;
     background: #161b22;
+    width: 100vw;
 
     div {
         display: flex;
@@ -47,6 +65,7 @@ aside {
         h2 {
             font-size: 18px;
             text-align: center;
+            margin-bottom: 15px;
         }
         h1{
             font-size: 28px;
@@ -54,19 +73,10 @@ aside {
             text-align: center;
             margin-top: 38px;
         }
+        p{
+            text-align: center;
+            padding: 5px;
+            color: #DE6363;
+        }
     }
-}
-
-main {
-    display: flex;
-    flex: 8;
-    justify-content: center;
-}
-
-main > div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0 32px;
-    min-width: 800px;
 }

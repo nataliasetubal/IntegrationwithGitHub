@@ -1,39 +1,39 @@
 h1 {
-        font-family: "Ubuntu", sans-serif;
-        font-style: normal;
-        line-height: 32px;
+    font-family: "Ubuntu", sans-serif;
+    font-style: normal;
+    line-height: 32px;
+    text-align: center;
+    margin-bottom: 42px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    margin-top: 20px;
+
+    input {
+        width: 300px;
+        height: 35px;
+        background: #ffffff;
+        border: 3px solid #e1e7ef;
+        border-radius: 5px;
+        margin-bottom: 30px;
         text-align: center;
-        margin-bottom: 42px;
     }
 
-    form {
-        display: flex;
-        flex-direction: column;
+    button {
         align-self: center;
-
-        input {
-            width: 300px;
-            height: 35px;
-            background: #ffffff;
-            border: 3px solid #e1e7ef;
-            border-radius: 5px;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-
-        button {
-            align-self: center;
-            width: 126px;
-            height: 40px;
-            background: #2ea44f;
-            border-radius: 5px;
-            border: none;
-            color: #fbfbfb;
-
-            &:hover {
-                background: #298f46;
-                font-weight: 600;
-                cursor: pointer;
-            }
+        width: 126px;
+        height: 40px;
+        background: #2ea44f;
+        border-radius: 5px;
+        border: none;
+        color: #fbfbfb;
+        &:hover {
+            background: #298f46;
+            font-weight: 600;
+            cursor: pointer;
         }
     }
+}

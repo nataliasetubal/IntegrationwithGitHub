@@ -1,8 +1,19 @@
+section {
+    flex: 1;
+}
+
+main {
+    display: flex;
+    flex: 3;
+    justify-content: center;
+    padding: 0 32px;
+    min-width: 750px;
+}
+
 main > div {
+    display: flex;
     flex-direction: column;
     justify-content: center;
-    min-width: 750px;
-
     header {
         display: flex;
         background: #0d1117;
@@ -28,7 +39,7 @@ main > div {
             justify-content: center;
         }
 
-        .user{
+        .user {
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
@@ -44,7 +55,6 @@ main > div {
             text-align: left;
             margin-bottom: 0px;
         }
-        
     }
 }
 
@@ -62,7 +72,7 @@ main > div {
     }
 }
 
-section {
+.containerInformation {
     width: 700px;
     height: 230px;
     border-radius: 8px;
@@ -70,7 +80,7 @@ section {
     margin-top: 36px;
     padding: 0 87px;
 
-    .information{
+    .information {
         width: 400px;
         height: 230px;
         display: flex;
@@ -80,19 +90,19 @@ section {
     }
 }
 
-footer{
+footer {
     margin: 30px auto 10px;
     text-align: center;
     font-size: 16px;
 
-    .botaoPerfil{
+    .botaoPerfil {
         width: 350px;
-        background:#2EA44F;
+        background: #2ea44f;
         padding: 10px;
         border-radius: 8px;
         color: #f2efef;
 
-        a{
+        a {
             text-decoration: none;
             color: #f2efef;
         }

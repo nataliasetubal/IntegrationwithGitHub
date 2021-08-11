@@ -69,7 +69,7 @@ const Home: React.FC = () => {
 
     return (
         <div id="home-page">
-            <aside>
+            <section>
                 <div>
                     <img src={logoImg} alt="Logo do GitHub"></img>
                     <h1>Integration with GitHub</h1>
@@ -90,8 +90,8 @@ const Home: React.FC = () => {
                         </button>
                     </Form>
                 </div>
-            </aside>
-            {profile ? <Profile profile ={profile}/> : null }
+            </section>
+                {profile ? <Profile profile={profile} /> : null}
         </div>
     )
 }
